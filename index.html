@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWatch Pro - Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px 0;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-images {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .main-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .thumbnail-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail:hover {
+            border: 2px solid #007bff;
+        }
+
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-name {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .product-desc {
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            color: #007bff;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+
+        .btn-secondary {
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .links {
+            margin: 25px 0;
+        }
+
+        .links a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons img {
+            width: 24px;
+            margin-right: 15px;
+        }
+
+        .reviews, .newsletter {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .reviews h2, .newsletter h2 {
+            margin-bottom: 20px;
+        }
+
+        .review-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            width: 60%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-section {
+                flex-direction: column;
+            }
+            .newsletter input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TechCart</h1>
+        </header>
+
+        <section class="product-section">
+            <div class="product-images">
+                <img id="mainImage" class="main-img" src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600" alt="SmartWatch Pro">
+                <div class="thumbnail-group">
+                    <img class="thumbnail" src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=200" alt="Watch front" onclick="changeImage(this.src)">
+                    <img class="thumbnail" src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=200" alt="Watch side" onclick="changeImage(this.src)">
+                    <img class="thumbnail" src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=200" alt="Watch on wrist" onclick="changeImage(this.src)">
+                </div>
+            </div>
+
+            <div class="product-details">
+                <h1 class="product-name">SmartWatch Pro X1</h1>
+                <p class="product-desc">
+                    Track your fitness, get notifications, and monitor your health with the all-new SmartWatch Pro X1. 
+                    Features a 1.9" AMOLED display, 14-day battery life, GPS, heart rate monitor, and water resistance up to 50m.
+                </p>
+                <p class="price">\$199.99</p>
+                
+                <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+                <button class="btn btn-secondary" onclick="buyNow()">Buy Now</button>
+
+                <div class="links">
+                    <a href="#features">Learn More</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review-card">
+                <strong>Rahul S.</strong> ⭐⭐⭐⭐⭐
+                <p>"Best smartwatch for the price. Battery lasts forever!"</p>
+            </div>
+            <div class="review-card">
+                <strong>Priya K.</strong> ⭐⭐⭐⭐
+                <p>"Love the design and fitness tracking is very accurate."</p>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <form onsubmit="subscribe(event)">
+                <input type="email" placeholder="Enter your email" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 TechCart. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src.replace('w=200', 'w=600');
+        }
+
+        function addToCart() {
+            alert('SmartWatch Pro X1 added to cart! 🛒');
+        }
+
+        function buyNow() {
+            alert('Redirecting to checkout...');
+        }
+
+        function subscribe(event) {
+            event.preventDefault();
+            alert('Thanks for subscribing! You will get 10% off on your first order.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
